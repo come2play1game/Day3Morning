@@ -1,2 +1,4 @@
+include ':pages'
+include ':commonLib'
 include ':app'
 rootProject.name = "Day3Morning"

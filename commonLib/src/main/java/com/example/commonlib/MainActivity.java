@@ -1,4 +1,4 @@
-package com.u2deom.day3morning;
+package com.example.commonlib;
 
 import androidx.appcompat.app.AppCompatActivity;
 
