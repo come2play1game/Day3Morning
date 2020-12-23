@@ -1,3 +1,5 @@
+include ':testJDK'
+include ':jetpack'
 include ':pages'
 include ':commonLib'
 include ':app'

@@ -1,8 +1,12 @@
 apply plugin: 'com.android.application'
-
+apply plugin: 'com.alibaba.arouter'
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
+
+    dataBinding {
+        enabled = true
+    }
 
     defaultConfig {
         applicationId "com.u2deom.day3morning"
@@ -12,6 +16,15 @@ android {
         versionName "1.0"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
+
+        javaCompileOptions {
+
+            annotationProcessorOptions {
+
+                arguments = [moduleName: project.getName()]
+
+            }
+        }
     }
     compileOptions {
         sourceCompatibility JavaVersion.VERSION_1_8
@@ -19,8 +32,8 @@ android {
     }
 
 
-    signingConfigs {
-        release {
+    signingConfigs { //签名配置
+        release {  //release签名
             keyAlias "u2demon"
             keyPassword "u2demonapp"
             storePassword "u2demonapp"
@@ -32,16 +45,17 @@ android {
         release {
             minifyEnabled false
             proguardFiles getDefaultProguardFile('proguard-android-optimize.txt'), 'proguard-rules.pro'
-            signingConfigs signingConfigs.release
+            signingConfig signingConfigs.release  //选择signingConfigs下的release签名
         }
+    }
+    compileOptions {  //使用Java 8 新特性时添加该设置项
+        targetCompatibility JavaVersion.VERSION_1_8
+        sourceCompatibility JavaVersion.VERSION_1_8
     }
 }
 
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
-    implementation 'androidx.appcompat:appcompat:1.2.0'
-    implementation 'androidx.constraintlayout:constraintlayout:2.0.1'
-    compile project(":pages")
-
-
+    implementation project(":pages")
+    annotationProcessor'com.alibaba:arouter-compiler:1.1.4'
 }

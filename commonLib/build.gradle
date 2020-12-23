@@ -1,4 +1,7 @@
 apply plugin: 'com.android.library'
+apply plugin: 'kotlin-android'
+
+apply plugin: 'kotlin-kapt'
 
 android {
     compileSdkVersion 30
@@ -12,7 +15,11 @@ android {
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
+
+
     }
+
+
 
     buildTypes {
         release {
@@ -21,14 +28,26 @@ android {
         }
     }
 }
+kapt {
+    arguments {
+        arg("moduleName", project.getName())
+    }
+}
 
 dependencies {
     api fileTree(dir: "libs", include: ["*.jar"])
     api 'androidx.appcompat:appcompat:1.2.0'
+    api 'androidx.constraintlayout:constraintlayout:1.1.3'
     testApi 'junit:junit:4.12'
     androidTestApi 'androidx.test.ext:junit:1.1.2'
     androidTestApi 'androidx.test.espresso:espresso-core:3.3.0'
-    implementation 'androidx.constraintlayout:constraintlayout:1.1.3'
+    implementation "androidx.core:core-ktx:+"
+    implementation "org.jetbrains.kotlin:kotlin-stdlib-jdk7:$kotlin_version"
+    api "androidx.recyclerview:recyclerview:1.1.0"
 
-
+    api 'com.alibaba:arouter-api:1.3.1'
+    kapt 'com.alibaba:arouter-compiler:1.1.4'
+}
+repositories {
+    mavenCentral()
 }

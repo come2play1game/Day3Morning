@@ -1,8 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="com.example.pages">
 
     <application>
-        <activity android:name=".MainActivity">
+        <activity android:name=".pages.ListViewAct"></activity>
+        <activity android:name=".pages.UserInfoAct" />
+        <activity android:name=".pages.ViewStatusAct" />
+        <activity android:name=".pages.TestTransitionAct" />
+        <activity android:name=".pages.MainActivity">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
 
@@ -10,4 +15,5 @@
             </intent-filter>
         </activity>
     </application>
+
 </manifest>
