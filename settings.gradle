@@ -1,3 +1,4 @@
+include ':media'
 include ':testJDK'
 include ':jetpack'
 include ':pages'

@@ -37,7 +37,7 @@ android {
             keyAlias "u2demon"
             keyPassword "u2demonapp"
             storePassword "u2demonapp"
-            storeFile rootProject.file("key/keystore")
+            storeFile rootProject.file("key/u2demon")
         }
     }
 
