@@ -5,6 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:orientation="vertical"
+    android:id="@+id/ll_root"
     tools:context=".pages.MainActivity">
 
     <include
@@ -13,28 +14,26 @@
         app:layout_constraintTop_toTopOf="parent" />
 
 
-
     <androidx.recyclerview.widget.RecyclerView
         android:id="@+id/lv_entrance_list"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"/>
+        android:layout_height="wrap_content"
+        app:layout_constraintTop_toBottomOf="@id/am_i_title" />
 
 
-<!--    <com.example.pages.widget.ScaleLayout-->
-<!--        android:layout_width="match_parent"-->
-<!--        android:layout_height="300dp"-->
-<!--        android:layout_marginTop="30dp"-->
-<!--        android:visibility="gone"-->
-<!--        app:layout_constraintTop_toBottomOf="@id/test_transition">-->
+    <!--    <com.example.pages.widget.ScaleLayout-->
+    <!--        android:layout_width="match_parent"-->
+    <!--        android:layout_height="300dp"-->
+    <!--        android:layout_marginTop="30dp"-->
+    <!--        android:visibility="gone"-->
+    <!--        app:layout_constraintTop_toBottomOf="@id/test_transition">-->
 
-<!--        <ImageView-->
-<!--            android:layout_width="match_parent"-->
-<!--            android:layout_height="match_parent"-->
-<!--            android:scaleType="fitXY"-->
-<!--            android:src="@drawable/test_bg" />-->
-<!--    </com.example.pages.widget.ScaleLayout>-->
-
-
+    <!--        <ImageView-->
+    <!--            android:layout_width="match_parent"-->
+    <!--            android:layout_height="match_parent"-->
+    <!--            android:scaleType="fitXY"-->
+    <!--            android:src="@drawable/test_bg" />-->
+    <!--    </com.example.pages.widget.ScaleLayout>-->
 
 
     <!--    <TabHost-->
@@ -69,4 +68,5 @@
     <!--                android:orientation="vertical"></LinearLayout>-->
     <!--        </FrameLayout>-->
     <!--    </TabHost>-->
+
 </LinearLayout>

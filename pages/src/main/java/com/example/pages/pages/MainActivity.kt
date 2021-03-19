@@ -3,6 +3,7 @@ package com.example.pages.pages
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.example.commonlib.base.BaseAct
 import com.example.commonlib.constant.RoutePath
+import com.example.commonlib.utils.ToastUtil
 import com.example.pages.R
 import com.example.pages.control.EntranceAdapter
 import com.example.pages.model.EntranceInfo
@@ -25,11 +26,15 @@ class MainActivity : BaseAct() {
                 EntranceInfo("转场动画", RoutePath.test_transition),
                 EntranceInfo("view", RoutePath.test_view),
                 EntranceInfo("ListView", RoutePath.test_listview),
-                EntranceInfo("dataBinding", RoutePath.jetpack_data_binding)
+                EntranceInfo("dataBinding", RoutePath.jetpack_data_binding),
+                EntranceInfo("picture edit", RoutePath.test_animator)
         )
 
         lv_entrance_list.layoutManager = LinearLayoutManager(this)
         lv_entrance_list.adapter = adapter
+        ll_root.setOnClickListener {
+            ToastUtil.showShort("click root")
+        }
     }
 
 

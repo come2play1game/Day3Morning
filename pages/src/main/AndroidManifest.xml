@@ -3,7 +3,8 @@
     package="com.example.pages">
 
     <application>
-        <activity android:name=".pages.ListViewAct"></activity>
+        <activity android:name=".pages.AnimatorTestAct"></activity>
+        <activity android:name=".pages.ListViewAct" />
         <activity android:name=".pages.UserInfoAct" />
         <activity android:name=".pages.ViewStatusAct" />
         <activity android:name=".pages.TestTransitionAct" />

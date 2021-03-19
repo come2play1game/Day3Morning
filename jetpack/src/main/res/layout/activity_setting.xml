@@ -9,10 +9,42 @@
     tools:context=".setting.SettingAct">
 
 
-    <TextView
+    <ViewStub
+        android:id="@+id/tv_device_info"
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:text="setting" />
+        android:layout_height="match_parent"
+        android:layout="@layout/common_item_setting" />
+
+
+    <ViewStub
+        android:id="@+id/tv_motion_switch"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/common_item_setting" />
+
+
+    <ViewStub
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/common_item_setting" />
+
+
+    <ViewStub
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/common_item_setting" />
+
+
+    <ViewStub
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        android:layout="@layout/common_item_setting" />
+
+
+    <TextView
+        android:id="@+id/tv_load_settings"
+        style="@style/commonTestButtonStyle"
+        android:text="加载setting项" />
 
 
 </LinearLayout>

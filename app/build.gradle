@@ -1,5 +1,8 @@
 apply plugin: 'com.android.application'
+apply plugin: 'kotlin-android'
 apply plugin: 'com.alibaba.arouter'
+
+
 android {
     compileSdkVersion 30
     buildToolsVersion "30.0.2"
@@ -57,5 +60,8 @@ android {
 dependencies {
     implementation fileTree(dir: "libs", include: ["*.jar"])
     implementation project(":pages")
+    implementation project(":testJDK")
+    implementation "org.jetbrains.kotlin:kotlin-stdlib:$kotlin_version"
+
     annotationProcessor'com.alibaba:arouter-compiler:1.1.4'
 }
