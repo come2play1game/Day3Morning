@@ -1,11 +1,15 @@
 package com.example.commonlib.base
 
+import android.app.Dialog
 import android.content.Intent
 import android.os.Bundle
 import android.view.View
 import android.widget.TextView
 import androidx.fragment.app.FragmentActivity
 import com.example.commonlib.R
+import com.example.commonlib.bean.CommonEvent
+import org.greenrobot.eventbus.EventBus
+import org.greenrobot.eventbus.Subscribe
 
 abstract class BaseAct : FragmentActivity() {
 
@@ -16,6 +20,7 @@ abstract class BaseAct : FragmentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(getLayoutId())
+        EventBus.getDefault().register(this)
         initView()
     }
 
@@ -37,6 +42,17 @@ abstract class BaseAct : FragmentActivity() {
             titleView!!.text = title
         }
     }
+
+
+    @Subscribe
+    public fun subscribeEvent(event: CommonEvent) {
+        onEvent()
+    }
+
+    open fun onEvent() {
+
+    }
+
 
     open fun jumpToAct(activityClz: Class<*>?) {
         val intent = Intent(this, activityClz)

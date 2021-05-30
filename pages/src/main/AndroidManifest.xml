@@ -3,7 +3,11 @@
     package="com.example.pages">
 
     <application>
-        <activity android:name=".pages.AnimatorTestAct"></activity>
+        <activity android:name=".pages.ViewTouchAct"></activity>
+        <activity android:name=".pages.InflateAsyncAct" />
+        <activity android:name=".pages.SecondAct" />
+        <activity android:name=".pages.RxLeakMemoryAct" />
+        <activity android:name=".pages.AnimatorTestAct" />
         <activity android:name=".pages.ListViewAct" />
         <activity android:name=".pages.UserInfoAct" />
         <activity android:name=".pages.ViewStatusAct" />
